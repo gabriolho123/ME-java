@@ -14,7 +14,7 @@ public class Requerimento implements Serializable {
     private String statusFinal;
     private boolean taxaEhAplicavel;
     
-    // Relacionamentos (AssociaÁıes)
+    // Relacionamentos (Associa√ß√µes)
     private Aluno solicitante;
     private TipoRequerimento tipo;
     private Status statusAtual;
@@ -26,14 +26,14 @@ public class Requerimento implements Serializable {
         this.numero = numero;
         this.solicitante = solicitante;
         this.tipo = tipo;
-        this.statusAtual = new Status("PENDENTE"); // Status inicial padr„o
-        this.dataSolicitacao = new Date(); // Inicializa a data no momento da criaÁ„o
+        this.statusAtual = new Status("PENDENTE"); // Status inicial padr√£o
+        this.dataSolicitacao = new Date(); // Inicializa a data no momento da cria√ß√£o
     }
 
-    // MÈtodos Operacionais
+    // M√©todos Operacionais
     
     /**
-     * Define o Responsavel que est· tratando o requerimento.
+     * Define o Responsavel que est√° tratando o requerimento.
      */
     public void encaminhar(Responsavel novoResponsavel) {
         this.responsavelAtual = novoResponsavel;
