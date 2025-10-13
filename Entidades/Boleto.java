@@ -15,12 +15,12 @@ public class Boleto {
         this.statusPagamento = "AGUARDANDO PAGAMENTO";
     }
 
-    // *** ESTE MÉTODO getValor() É O QUE ESTAVA FALTANDO OU COM PROBLEMA! ***
+    // *** ESTE MÃ‰TODO getValor() Ã‰ O QUE ESTAVA FALTANDO OU COM PROBLEMA! ***
     public Double getValor() {
         return valor;
     }
     
-    // Métodos
+    // MÃ©todos
     public void registrarPagamento(Date dataPagamento) {
         this.statusPagamento = "QUITADO";
     }
