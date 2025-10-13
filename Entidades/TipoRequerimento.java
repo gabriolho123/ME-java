@@ -9,13 +9,13 @@ public class TipoRequerimento implements Serializable {
     private String nome;
     private double valorTaxa;
 
-    // Construtor (OBRIGATÓRIO para a GUI)
+    // Construtor (OBRIGATÃ“RIO para a GUI)
     public TipoRequerimento(String nome, double valorTaxa) {
         this.nome = nome;
         this.valorTaxa = valorTaxa;
     }
 
-    // GETTERS (OBRIGATÓRIO para a GUI acessar o valor)
+    // GETTERS (OBRIGATÃ“RIO para a GUI acessar o valor)
     public String getNome() {
         return nome;
     }
@@ -24,7 +24,7 @@ public class TipoRequerimento implements Serializable {
         return valorTaxa;
     }
     
-    // SETTERS (Se necessário)
+    // SETTERS (Se necessÃ¡rio)
     public void setNome(String nome) {
         this.nome = nome;
     }
