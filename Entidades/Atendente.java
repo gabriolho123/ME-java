@@ -6,10 +6,10 @@ public class Atendente implements Serializable {
     
     private static final long serialVersionUID = 1L;
 
-    // Atributos básicos de um funcionário/atendente
+    // Atributos bï¿½sicos de um funcionï¿½rio/atendente
     private String matricula;
     private String nome;
-    private String setor; // Ex: "Secretaria", "Coordenação", etc.
+    private String setor; // Ex: "Secretaria", "Coordenaï¿½ï¿½o", etc.
 
     // Construtor
     public Atendente(String matricula, String nome, String setor) {
@@ -32,13 +32,13 @@ public class Atendente implements Serializable {
         return setor;
     }
 
-    // SETTERS (Se for necessário alterar os dados após a criação)
+    // SETTERS (Se for necessï¿½rio alterar os dados apï¿½s a criaï¿½ï¿½o)
     
     public void setSetor(String setor) {
         this.setor = setor;
     }
     
-    // Método para exibir o nome do Atendente no console (opcional)
+    // Mï¿½todo para exibir o nome do Atendente no console (opcional)
     @Override
     public String toString() {
         return this.nome + " (" + this.setor + ")";
