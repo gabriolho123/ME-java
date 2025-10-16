@@ -1,27 +1,41 @@
 package modelo.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Boleto {
-    private String numeroBoleto;
-    private Double valor; // <<< O ATRIBUTO VALOR
-    private Date dataEmissao;
-    private String statusPagamento; // AGUARDANDO_PAGAMENTO, QUITADO
+public class Boleto implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
+    private String numeroBoleto;
+    private Double valor;
+    private Date dataEmissao;
+    private String statusPagamento; 
+    
+    // Construtor
     public Boleto(String numeroBoleto, Double valor) {
         this.numeroBoleto = numeroBoleto;
         this.valor = valor;
-        this.dataEmissao = new Date();
+        this.dataEmissao = new Date(); 
         this.statusPagamento = "AGUARDANDO PAGAMENTO";
     }
+    
+    // MÉTODOS GET CORRIGIDOS E ADICIONADOS
+    
+    public String getNumero() {
+        return this.numeroBoleto;
+    }
 
-    // *** ESTE MÃ‰TODO getValor() Ã‰ O QUE ESTAVA FALTANDO OU COM PROBLEMA! ***
     public Double getValor() {
-        return valor;
+        return this.valor;
     }
     
-    // MÃ©todos
+    // Outros métodos
     public void registrarPagamento(Date dataPagamento) {
         this.statusPagamento = "QUITADO";
+    }
+
+    public String getStatusPagamento() {
+        return statusPagamento;
     }
 }

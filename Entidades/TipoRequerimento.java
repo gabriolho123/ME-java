@@ -3,33 +3,24 @@ package modelo.entidades;
 import java.io.Serializable;
 
 public class TipoRequerimento implements Serializable {
+    
     private static final long serialVersionUID = 1L;
 
-    // Atributos
     private String nome;
     private double valorTaxa;
 
-    // Construtor (OBRIGATÃ“RIO para a GUI)
+    // Construtor OBRIGATÓRIO
     public TipoRequerimento(String nome, double valorTaxa) {
         this.nome = nome;
         this.valorTaxa = valorTaxa;
     }
-
-    // GETTERS (OBRIGATÃ“RIO para a GUI acessar o valor)
+    
+    // GETTERS OBRIGATÓRIOS
     public String getNome() {
         return nome;
     }
 
     public double getValorTaxa() {
         return valorTaxa;
-    }
-    
-    // SETTERS (Se necessÃ¡rio)
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setValorTaxa(double valorTaxa) {
-        this.valorTaxa = valorTaxa;
     }
 }

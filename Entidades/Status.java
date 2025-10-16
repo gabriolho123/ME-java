@@ -1,14 +1,18 @@
 package modelo.entidades;
 
-public class Status {
-    private String nomeStatus;
+import java.io.Serializable;
 
-    public Status(String nomeStatus) {
-        this.nomeStatus = nomeStatus;
+public class Status implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
+    private String nome;
+
+    public Status(String nome) {
+        this.nome = nome;
     }
 
-    // Getters
-    public String getNomeStatus() {
-        return nomeStatus;
+    public String getNome() {
+        return nome;
     }
 }
