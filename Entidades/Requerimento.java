@@ -25,7 +25,7 @@ public class Requerimento implements Serializable {
         this.dataSolicitacao = new Date(); 
     }
     
-    // GETTERS OBRIGATÓRIOS
+    // GETTERS OBRIGATï¿½RIOS
     public String getNumero() {
         return numero;
     }
@@ -46,7 +46,7 @@ public class Requerimento implements Serializable {
         return boletoGerado;
     }
     
-    // SETTER OBRIGATÓRIO
+    // SETTER OBRIGATï¿½RIO
     public void setBoletoGerado(Boleto boletoGerado) {
         this.boletoGerado = boletoGerado;
     }
