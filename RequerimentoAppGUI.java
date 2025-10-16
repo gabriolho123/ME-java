@@ -3,7 +3,6 @@ package visao;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
 import modelo.entidades.Aluno;
 import modelo.entidades.TipoRequerimento;
 import modelo.entidades.Requerimento;
@@ -12,9 +11,9 @@ import modelo.entidades.Boleto;
 import modelo.entidades.Responsavel;
 
 // A classe principal herda de JFrame para criar a janela.
-public class RequerimentoAppGUI extends JFrame { 
-    
-    // LINHA ESSENCIAL: Corrige o erro de serialização do Eclipse (vermelho ou amarelo)
+public class RequerimentoAPPgui extends JFrame { 
+
+    // LINHA ESSENCIAL: Corrige o erro de serializaï¿½ï¿½o do Eclipse (vermelho ou amarelo)
     private static final long serialVersionUID = 1L; 
 
     // Componentes da GUI
@@ -24,35 +23,36 @@ public class RequerimentoAppGUI extends JFrame {
     private JButton abrirRequerimentoButton;
     private JLabel resultadoLabel;
 
-    // Dados de teste FIXOS (para simulação inicial, como nos seus arquivos)
-    private Aluno alunoTeste = new Aluno("123456", "Maria da Silva");
+    // Dados de teste FIXOS (para simulaï¿½ï¿½o inicial)
+    // Usando construtor com String e String (Matricula e Nome)
+    private Aluno alunoTeste = new Aluno("123456", "Maria da Silva"); 
     private TipoRequerimento tipoCertificado = new TipoRequerimento("Certificado", 10.00);
-    private TipoRequerimento tipoDesistencia = new TipoRequerimento("Desistência", 0.00);
+    private TipoRequerimento tipoDesistencia = new TipoRequerimento("Desistï¿½ncia", 0.00);
 
     // Construtor: Configura a interface e seus componentes
-    public RequerimentoAppGUI() {
-        // Configurações básicas da janela (como nas suas imagens)
-        setTitle("Módulo de Requerimento HABILITA -  Teste POO");
+    public RequerimentoAPPgui() {
+        // Configuraï¿½ï¿½es bï¿½sicas da janela 
+        setTitle("Mï¿½dulo de Requerimento HABILITA - Teste POO");
         setSize(400, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Centraliza a janela
         
-        // Inicialização dos componentes
+        // Inicializaï¿½ï¿½o dos componentes
         mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
         // JComboBox para Tipo de Requerimento
-        String[] tipos = {"Certificado", "Desistência"};
+        String[] tipos = {"Certificado", "Desistï¿½ncia"};
         tipoRequerimentoComboBox = new JComboBox<>(tipos);
         mainPanel.add(new JLabel("Tipo de Requerimento:"));
         mainPanel.add(tipoRequerimentoComboBox);
 
         // JTextArea para Detalhes
         detalhesArea = new JTextArea(5, 20);
-        mainPanel.add(new JLabel("Detalhes da Solicitação:"));
+        mainPanel.add(new JLabel("Detalhes da Solicitaï¿½ï¿½o:"));
         mainPanel.add(new JScrollPane(detalhesArea));
 
-        // Botão de Ação
+        // Botï¿½o de Aï¿½ï¿½o
         abrirRequerimentoButton = new JButton("Abrir Requerimento");
         mainPanel.add(abrirRequerimentoButton);
 
@@ -60,10 +60,10 @@ public class RequerimentoAppGUI extends JFrame {
         resultadoLabel = new JLabel("Status: Aguardando...");
         mainPanel.add(resultadoLabel);
         
-        // Adiciona o painel principal à janela
+        // Adiciona o painel principal ï¿½ janela
         this.add(mainPanel);
 
-        // Adiciona o Listener ao botão
+        // Adiciona o Listener ao botï¿½o
         abrirRequerimentoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,7 +72,7 @@ public class RequerimentoAppGUI extends JFrame {
         });
     }
     
-    // Método de Simulação de Abertura de Requerimento
+    // Mï¿½todo de Simulaï¿½ï¿½o de Abertura de Requerimento
     private void abrirNovoRequerimento() {
         
         // 1. Coleta dados da GUI
@@ -80,25 +80,26 @@ public class RequerimentoAppGUI extends JFrame {
         TipoRequerimento tipoParaRequerimento = tipoSelecionado.equals("Certificado") ? tipoCertificado : tipoDesistencia;
         
         // 2. Cria o novo Requerimento
-        // O número é apenas um ID de simulação
         Requerimento novoRequer = new Requerimento("REQ-" + (int)(Math.random() * 1000), alunoTeste, tipoParaRequerimento);
         
-        // 3. Aplica regras de negócio (simulação)
-        String logBoleto = "NÃO APLICÁVEL";
+        // 3. Aplica regras de negï¿½cio (simulaï¿½ï¿½o)
+        String logBoleto = "Nï¿½O APLICï¿½VEL";
         if (tipoParaRequerimento.getValorTaxa() > 0) {
-            // Simula a criação de um Boleto
+            // Simula a criaï¿½ï¿½o de um Boleto
             Boleto logBoletoGerado = new Boleto("BLT-" + novoRequer.getNumero(), tipoParaRequerimento.getValorTaxa());
             novoRequer.setBoletoGerado(logBoletoGerado);
-            logBoleto = "Gerado: " + logBoletoGerado.getNumero() + " (R$ " + logBoletoGerado.getValor() + ")";
+            
+            // LINHA CORRIGIDA: getNumero() e getValor() sï¿½o chamados
+            logBoleto = "Gerado: " + logBoletoGerado.getNumero() + " (R$ " + logBoletoGerado.getValor() + ")"; 
         }
         
-        // 4. Exibe o resultado da simulação
+        // 4. Exibe o resultado da simulaï¿½ï¿½o
         resultadoLabel.setText("Requerimento " + novoRequer.getNumero() + " ABERTO com sucesso!");
         
         // Apenas para ver no Console (ajuda no debug)
         System.out.println("------------------------------------");
         System.out.println("Novo Requerimento Aberto:");
-        System.out.println("Número: " + novoRequer.getNumero());
+        System.out.println("Nï¿½mero: " + novoRequer.getNumero());
         System.out.println("Solicitante: " + novoRequer.getSolicitante().getNome());
         System.out.println("Tipo: " + novoRequer.getTipo().getNome());
         System.out.println("Status Inicial: " + novoRequer.getStatusAtual().getNome());
@@ -106,13 +107,11 @@ public class RequerimentoAppGUI extends JFrame {
         System.out.println("------------------------------------");
     }
 
-    // MÉTODO MAIN: Inicia a aplicação (OBRIGATÓRIO)
-    public static void main(String[] args) {
-        // Usa SwingUtilities.invokeLater para garantir que a GUI seja iniciada na Thread segura do Swing
+    // Mï¿½TODO MAIN: Ponto de entrada da aplicaï¿½ï¿½o
+    public static void main(String[] args) { // String[] args ï¿½ OBRIGATï¿½RIO e estï¿½ aqui.
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                // Instancia a classe e torna a janela visível
-                new RequerimentoAppGUI().setVisible(true); // Inicia a janela
+                new RequerimentoAPPgui().setVisible(true); 
             }
         });
     }
