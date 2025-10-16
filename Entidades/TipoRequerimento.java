@@ -9,13 +9,13 @@ public class TipoRequerimento implements Serializable {
     private String nome;
     private double valorTaxa;
 
-    // Construtor OBRIGATÓRIO
+    // Construtor OBRIGATï¿½RIO
     public TipoRequerimento(String nome, double valorTaxa) {
         this.nome = nome;
         this.valorTaxa = valorTaxa;
     }
     
-    // GETTERS OBRIGATÓRIOS
+    // GETTERS OBRIGATï¿½RIOS
     public String getNome() {
         return nome;
     }
