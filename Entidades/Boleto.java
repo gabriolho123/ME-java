@@ -20,7 +20,7 @@ public class Boleto implements Serializable {
         this.statusPagamento = "AGUARDANDO PAGAMENTO";
     }
     
-    // MÉTODOS GET CORRIGIDOS E ADICIONADOS
+    // Mï¿½TODOS GET CORRIGIDOS E ADICIONADOS
     
     public String getNumero() {
         return this.numeroBoleto;
@@ -30,7 +30,7 @@ public class Boleto implements Serializable {
         return this.valor;
     }
     
-    // Outros métodos
+    // Outros mï¿½todos
     public void registrarPagamento(Date dataPagamento) {
         this.statusPagamento = "QUITADO";
     }
